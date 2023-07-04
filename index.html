@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"> -->
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+
+/* // Colors
+$navbar-white: #fafafa;
+$navbar-black: #131313;
+$navbar-active-color: #fafafa;
+$navbar-bg-active-color: #ff9900;
+$bg-light-blue: #00c6ff;
+$bg-dark-blue: #0072ff; */
+
+
+
+* {
+
+    margin: 0;
+    padding: 0;
+     /* background-color: #FFC017; */
+}
+  
+/* Navigation */
+
+.navigation {
+    margin-top: 25px;
+
+    height: 74px;
+    /* background-color: #FFC017; */
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+    justify-content: center;
+    align-items: center;
+}
+
+.left {
+    font-size: 30px;
+    display: flex;
+
+}
+
+.left img{
+    height:5vw;
+    width:9.4vw;
+}
+
+.left ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 6.5rem;
+    font-size: 15px;
+    /* font-weight: bold; */
+}
+
+.left ul li {
+    list-style: none;
+    margin: 0 1.1rem;
+    font-family: 'Times New Roman', Times, serif;
+    /* background-color: rgb(255, 255, 255); */
+
+}
+
+.left ul li a {
+    text-decoration: none;
+    color: black;
+    
+
+}
+
+.left ul li a:hover {
+    color:#ffbb00;
+}
+
+
+/* .btn {
+    padding: 0px 9px;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    transition: all 0.6s ease-in-out;
+}
+
+.btn:hover {
+    color: white;
+    background-color: rgb(51, 176, 51);
+} */
+/* utility classes */
+
+.max-width-1{
+    max-width:  80vw;
+   
+}
+
+.max-width-2{
+max-width: 60vw;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+
+@media screen and (max-width:1200px) {
+    .navigation {
+        flex-direction: column;
+        margin-bottom: 23px;
+
+    }
+
+    .left ul {
+        font-size: 10px;
+        font-weight: normal;
+    }
+
+    .left span {
+        font-size: 10px;
+        font-weight: normal;
+
+    }
+
+    .left {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* .content-right {
+        display: none;
+    }
+
+    .home-article {
+        flex-direction: column;
+    }
+
+    .home-article img {
+        text-align: center;
+    } */
+}
+
+/* carousel */
+
+.container{
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    width: 86%;
+    /* changed */
+    height: 41vw;
+}
+
+.containert{
+    margin: auto;
+  
+    overflow: hidden;
+    width: 86%;
+    /* height: 50vw; */
+   
+}
+
+.container .slider{
+    position: absolute;
+    top: 0;
+    left:0;
+    width:500%;
+    height: 100%;
+   animation:animate 10s linear infinite ;
+}
+
+.container .slider .slide{
+    position: relative;
+    width:20%;
+    height:100%;
+    float:left;
+}
+
+.container .slider .slide .caption{
+    position: absolute;
+    bottom: 10px;
+    left: 60px;
+    right: 60px;
+    padding: 30px;
+    background: rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    transition: 40s;
+}
+
+.container .slider .slide .caption h2{
+    text-align: center;
+    margin: 0 0 20px;
+    padding: 0;
+    color: #fff;
+     font-size: 40px;
+    transition: 40s;
+}
+
+.container .slider .slide .caption p{
+    margin: 0;
+        padding: 0;
+        color: #fff;
+        font-size: 14px;
+    }
+.container .slider .slide.slide1{
+    background-image: url("{{url_for('static',filename='image/crop1.png')}}");
+    background-size: cover;
+    background-position: center;
+}
+
+.container .slider .slide.slide2{
+    
+    background-image: url("{{url_for('static',filename='image/crop2.png')}}");
+    background-size: cover;
+    background-position: center;
+}
+.container .slider .slide.slide3{
+    background-image: url("{{url_for('static',filename='image/crop3.png')}}");
+    background-size: cover;
+    background-position: center;
+}
+.container .slider .slide.slide4{
+    background-image: url("{{url_for('static',filename='image/crop4.png')}}");
+    background-size: cover;
+    background-position: center;
+}
+/* .container .slider .slide.slide5{
+    background-image: url(crop5.png);
+    background-size: cover;
+    background-position: center;
+} */
+
+@keyframes animate
+{ 0%{
+left:0;
+}
+
+20%{
+left: 0;
+}
+
+25%{
+left: -100%;
+}
+45%{
+left:-100%;
+}
+
+50% {
+    left: -200%;
+}
+
+70% {
+    left: -200%;
+}
+
+75% {
+    left: -300%;
+}
+
+95% {
+    left: -300%;
+}
+
+100%{
+    left:-400%;
+}
+
+}
+
+@media (max-width:768px)
+{
+    .footer{
+        position: absolute;
+        bottom:0
+    }
+.container .slider .slide .caption {
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        padding: 20px;
+    }
+.container .slider .slide .caption h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+   
+.container .slider .slide .caption p {
+    
+    font-size: 10px;
+}
+}
+
+/* footer */
+
+.footer {
+  
+    height: 100px;
+    width: 100vw;
+    background-color: rgb(199, 247, 210);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: black;
+    font-weight: 500;
+
+}
+
+.footer a {
+    color: black;
+    text-decoration: none;
+}
+
+               
+ /* footer */
+
+/* about us */
+
+ .half-half-image-text {
+        padding: 70px 0px;
+      }
+      h1 {
+        color: #800000;
+        text-align: center;
+      }
+      .content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 35px 0px;
+      }
+      p {
+        font-size: 22px;
+      }
+
+      .img {
+        min-height: 320px;
+        height: 100%;
+        border-radius: 10px;
+      }
+
+/* about us */
+    </style>
+ <!-- <link rel="stylesheet" href="static/css/login.css"> -->
+    <title>Crop prediction</title>
+</head>
+
+<body>
+
+<!-- navigation -->
+<div class="navigation max-width-1 m-auto ">
+    <div class="left">
+        <span><img src="../static/image/Group3.png" alt="" srcset=""></span>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/predictor">Predictor</a></li>
+            <li><a href="/contact">Contact</a></li>
+
+        </ul>
+    </div>
+    
+</div>
+<!-- navigation -->
+
+<!-- carousel -->
+<section id="Home">
+  <div class="container">
+    <div class="slider">
+       <div class="slide slide1">
+           
+       </div>
+
+        <div class="slide slide2">
+            
+        </div>
+
+        <div class="slide slide3">
+           
+        </div>
+
+        <div class="slide slide4">
+            
+        </div>
+
+        <!-- <div class="slide slide5">
+            <div class="caption">
+                <h2>slider5</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam aliquam fugit similique debitis vitae eius
+                    nesciunt, earum consequatur vel porro assumenda dicta corporis repellat ducimus accusamus veritatis suscipit
+                    repudiandae repellendus! Consectetur culpa minima distinctio perferendis est consequuntur inventore vel eum
+                    nemo ea optio esse mollitia, dolorem, quaerat quod! Ipsa, similique.</p>
+            </div>
+        </div> -->
+
+    </div>
+  </div>
+  <div class="containert">
+    <!-- <div>
+         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex ab animi, quia ipsa eius cum illum. Repellat deleniti veniam sapiente amet possimus praesentium. Veritatis error et consectetur eaque officia neque deserunt commodi laudantium, possimus, harum adipisci dolorem molestias nemo id, quia quam hic suscipit quasi quos. Optio nobis ut illum dolor recusandae nostrum aliquam vel veritatis.
+    </div> -->
+    <div class="half-half-image-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1>Our Mission</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <div class="content">
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div
+              class="img"
+              style="
+                background: url()
+                  no-repeat center;
+                background-size: cover;
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer ">
+    <p>AGROTECH LABS</p>
+    <p>Made with ❤️ by Rishi Kant</p>
+     <p>© Copyright 2022  AgroTech_Labs</p>
+    <a href="https://www.freepik.com
+">vector credits:Freepiks</a>
+</div>
+  </section>
+<!-- carousel -->
+
+<!--About us-->
+<div class="max-width-1 m-auto ">
+
+  
+
+</div>
+<!--About us-->
+
+<!-- footer -->
+
+
+
+
+<!-- footer -->
+    <!-- <script src="../static/js/crop.js"></script> -->
+
+<script src="{{url_for('static',filename='js/firebaseconfig.js')}}"></script>
+</body>
+</html>
